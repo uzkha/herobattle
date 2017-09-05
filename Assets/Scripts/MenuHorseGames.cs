@@ -19,11 +19,16 @@ public class MenuHorseGames : MonoBehaviour {
 
 	public void AtivarTexto(){
 		txDevelopment.SetActive (true);
+		chamarHorseSound ();
 	}
 
     public void ChamarMenuInicialBatalhaHerois()
     {
         SceneManager.LoadScene(1); // cena 1 - menu inicial batalha do herois
     }
+
+	void chamarHorseSound(){
+		AudioManager.instance.SonsFXToca (0);
+	}
 
 }

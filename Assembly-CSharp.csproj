@@ -46,7 +46,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\GetCena.cs" />
      <Compile Include="Assets\Scripts\MenuHorseGames.cs" />
+     <Compile Include="Assets\Scripts\MenuInicialBatalhaHerois.cs" />
+     <Compile Include="Assets\Scripts\MenuJogar.cs" />
+     <None Include="Assets\Images\ColorfulButtons\Credits.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

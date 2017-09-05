@@ -10,14 +10,19 @@ public class MenuInicialBatalhaHerois : MonoBehaviour {
     [SerializeField]
     private GameObject panelWhiteParceiro;
 
+	[SerializeField]
+	private GameObject panelIdealizado;
+
 	// Use this for initialization
 	void Start () {
         panelWhiteParceiro.SetActive(false);
+		panelIdealizado.SetActive(false);
 	}
 
     public void MostrarPanelParceiro()
     {
         panelWhiteParceiro.SetActive(true);
+		panelIdealizado.SetActive(true);
     }
 
     public void ChamarMenuJogar()

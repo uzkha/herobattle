@@ -64,14 +64,12 @@ public class MenuJogar : MonoBehaviour {
             btnSoundOn.gameObject.GetComponent<Image>().enabled = true;
             btnSoundOff.gameObject.GetComponent<Image>().enabled = false;
             btnSoundOnClicked = true;
-            print("false");
         }
         else
         {
             btnSoundOn.gameObject.GetComponent<Image>().enabled = false;
             btnSoundOff.gameObject.GetComponent<Image>().enabled = true;
-            btnSoundOnClicked = false;
-            print("true");
+            btnSoundOnClicked = false;           
         }
     }
 }
