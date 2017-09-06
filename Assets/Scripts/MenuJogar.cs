@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuJogar : MonoBehaviour {
 
@@ -17,6 +18,7 @@ public class MenuJogar : MonoBehaviour {
     private Button btnSoundOff;
 
 
+
     private void Start()
     {
         btnSoundOff.gameObject.GetComponent<Image>().enabled = false;
@@ -25,6 +27,10 @@ public class MenuJogar : MonoBehaviour {
 
     public void ClickedOnConf()
     {
+
+        //som toque botao
+        AudioManager.instance.SonsFXToca(1);
+
         panelBack = GameObject.FindGameObjectWithTag("panelBackConf").GetComponent<Animator>();
 
         if (btnConfClicked == false)
@@ -42,6 +48,10 @@ public class MenuJogar : MonoBehaviour {
 
     public void ClickedOnCredits()
     {
+
+        //som toque botao
+        AudioManager.instance.SonsFXToca(1);
+
         panelCredits = GameObject.FindGameObjectWithTag("panelConfCredits").GetComponent<Animator>();
 
         if (btnCreditsClicked == false)
@@ -58,18 +68,38 @@ public class MenuJogar : MonoBehaviour {
 
     public void ClickedOnSound()
     {
-       
+
+        //som toque botao
+        AudioManager.instance.SonsFXToca(1);
+        AudioManager.instance.Mute();
+
         if (btnSoundOnClicked == false)
         {
             btnSoundOn.gameObject.GetComponent<Image>().enabled = true;
             btnSoundOff.gameObject.GetComponent<Image>().enabled = false;
             btnSoundOnClicked = true;
+            AudioManager.instance.SonsFXToca(1);
         }
         else
         {
             btnSoundOn.gameObject.GetComponent<Image>().enabled = false;
             btnSoundOff.gameObject.GetComponent<Image>().enabled = true;
-            btnSoundOnClicked = false;           
+            btnSoundOnClicked = false;
         }
+    }
+
+    public void ClickedOnJogar()
+    {
+        //som toque botao
+        AudioManager.instance.SonsFXToca(1);
+
+        //verifica se ja existe usuario registrado
+        if (UsuarioManager.instance.UsuarioExiste())
+        {
+            print("Nome: " + UsuarioManager.instance.getUsuarioNome() + " idade: " + UsuarioManager.instance.getUsuarioIdade().ToString());
+        } else {// usuario nao existe
+            SceneManager.LoadScene(3); // cena 1 - menu inicial batalha do herois             
+        }
+
     }
 }

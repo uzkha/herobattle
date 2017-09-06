@@ -12,6 +12,9 @@ public class AudioManager : MonoBehaviour {
 	public AudioClip[] clipsFX;
 	public AudioSource sonsFX;
 
+    //controle mute
+    public bool soundMute;
+
 	public static AudioManager instance;
 
 	private void Awake()
@@ -34,11 +37,12 @@ public class AudioManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (!musicaBG.isPlaying && GetCena.instance.fase > 1)
+		if (!musicaBG.isPlaying && GetCena.instance.fase > 1 && soundMute == false)
 		{
 			musicaBG.clip = getRandom();
 			musicaBG.Play();
 		}
+        
 	}
 
 	AudioClip getRandom()
@@ -51,4 +55,20 @@ public class AudioManager : MonoBehaviour {
 		sonsFX.clip = clipsFX[index];
 		sonsFX.Play();
 	}
+
+    public void Mute()
+    {
+        if(soundMute == false)
+        {
+            soundMute = true;
+            musicaBG.mute = true;
+            sonsFX.mute = true;
+        }
+        else
+        {
+            soundMute = false;
+            musicaBG.mute = false;
+            sonsFX.mute = false;
+        }
+    }
 }

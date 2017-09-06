@@ -78,9 +78,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\GetCena.cs" />
     <Compile Include="Assets\Scripts\MenuHorseGames.cs" />
     <Compile Include="Assets\Scripts\MenuInicialBatalhaHerois.cs" />
     <Compile Include="Assets\Scripts\MenuJogar.cs" />
+    <Compile Include="Assets\Scripts\UsuarioManager.cs" />
+    <Compile Include="Assets\Scripts\UsuarioRegistro.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Images\ColorfulButtons\Credits.txt" />
