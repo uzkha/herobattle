@@ -93,6 +93,10 @@ public class MenuJogar : MonoBehaviour {
         //som toque botao
         AudioManager.instance.SonsFXToca(1);
 
+		//forcar para teste
+		PlayerPrefs.DeleteAll();
+
+
         //verifica se ja existe usuario registrado
         if (UsuarioManager.instance.UsuarioExiste())
         {

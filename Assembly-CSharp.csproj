@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{9D7DDF70-0BD9-6198-DE34-691526B57509}</ProjectGuid>
+    <ProjectGuid>{1F2EDC03-EBA0-D566-83C0-F22458033F77}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -48,9 +48,12 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\GetCena.cs" />
+     <Compile Include="Assets\Scripts\MenuBoasVindas.cs" />
      <Compile Include="Assets\Scripts\MenuHorseGames.cs" />
      <Compile Include="Assets\Scripts\MenuInicialBatalhaHerois.cs" />
      <Compile Include="Assets\Scripts\MenuJogar.cs" />
+     <Compile Include="Assets\Scripts\UsuarioManager.cs" />
+     <Compile Include="Assets\Scripts\UsuarioRegistro.cs" />
      <None Include="Assets\Images\ColorfulButtons\Credits.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
