@@ -94,13 +94,13 @@ public class MenuJogar : MonoBehaviour {
         AudioManager.instance.SonsFXToca(1);
 
 		//forcar para teste
-		PlayerPrefs.DeleteAll();
+		//PlayerPrefs.DeleteAll();
 
 
         //verifica se ja existe usuario registrado
         if (UsuarioManager.instance.UsuarioExiste())
         {
-            print("Nome: " + UsuarioManager.instance.getUsuarioNome() + " idade: " + UsuarioManager.instance.getUsuarioIdade().ToString());
+            SceneManager.LoadScene(7); // level manager 
         } else {// usuario nao existe
             SceneManager.LoadScene(3); // cena 1 - menu inicial batalha do herois             
         }
