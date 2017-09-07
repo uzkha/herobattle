@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LevalManager : MonoBehaviour
-{
+public class LevelManager : MonoBehaviour {
 
     [System.Serializable]
     public class Level
@@ -21,12 +20,14 @@ public class LevalManager : MonoBehaviour
     public GameObject botao;
     public Transform localBtn;
     public List<Level> levelList;
+    public Text usuario;
+    public Text score;
 
     void ListaAdd()
     {
         foreach (Level level in levelList)
         {
-           /* GameObject btnNovo = Instantiate(botao) as GameObject;
+            GameObject btnNovo = Instantiate(botao) as GameObject;
             BotaoLevel btnNew = btnNovo.GetComponent<BotaoLevel>();
 
             btnNew.levelTxtBtn.text = level.levelText;
@@ -37,15 +38,15 @@ public class LevalManager : MonoBehaviour
                 level.habilitado = true;
                 level.txtAtivo = true;
 
-            }*/
+            }
 
 
-           /* btnNew.desbloqueadoBtn = level.desbloqueado;
+            btnNew.desbloqueadoBtn = level.desbloqueado;
             btnNew.GetComponent<Button>().interactable = level.habilitado;
             btnNew.GetComponentInChildren<Text>().enabled = level.txtAtivo;
             btnNew.GetComponent<Button>().onClick.AddListener(() => ClickLevel("Level" + btnNew.levelTxtBtn.text));
 
-            btnNovo.transform.SetParent(localBtn, false);*/
+            btnNovo.transform.SetParent(localBtn, false);
         }
     }
 
@@ -61,6 +62,9 @@ public class LevalManager : MonoBehaviour
         //deletar player prefs
         //PlayerPrefs.DeleteAll();
         ListaAdd();
+
+        usuario.text = UsuarioManager.instance.getUsuarioNome();
+        score.text = ScoreManager.instance.GetScore().ToString();
     }
 
     // Update is called once per frame
@@ -72,7 +76,7 @@ public class LevalManager : MonoBehaviour
     void Awake()
     {
         //destroy gamemanager e ui manager
-       /* Destroy(GameObject.Find("GameManager(Clone)"));
+        /*Destroy(GameObject.Find("GameManager(Clone)"));
         Destroy(GameObject.Find("UIManager(Clone)"));*/
     }
 }
