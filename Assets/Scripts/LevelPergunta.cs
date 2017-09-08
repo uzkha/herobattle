@@ -15,6 +15,7 @@ public class LevelPergunta : MonoBehaviour {
     // Use this for initialization
     void Start() {
 
+		fase = GetCena.instance.fase;
         montarPergunta();
 
     }
@@ -22,8 +23,7 @@ public class LevelPergunta : MonoBehaviour {
     void montarPergunta()
     {
 
-        fase = GetCena.instance.fase;
-
+   
         switch (fase) {
 
             case 5: // level 1
