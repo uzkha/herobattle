@@ -24,7 +24,10 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         ScoreManager.instance.GameStartScoreM();
-	}
+
+        //level 1 sai liberado
+        PlayerPrefs.SetInt("Level1", 1);
+    }
 	
 	// Update is called once per frame
 	void Update () {

@@ -94,7 +94,7 @@ public class MenuJogar : MonoBehaviour {
         AudioManager.instance.SonsFXToca(1);
 
 		//forcar para teste
-		PlayerPrefs.DeleteAll();
+		//PlayerPrefs.DeleteAll();
 
 
         //verifica se ja existe usuario registrado

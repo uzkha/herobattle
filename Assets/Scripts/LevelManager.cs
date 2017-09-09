@@ -23,6 +23,10 @@ public class LevelManager : MonoBehaviour {
     public Text usuario;
     public Text score;
 
+    public Sprite starOne;
+    public Sprite starTwo;
+    public Sprite starThree;
+
     void ListaAdd()
     {
         foreach (Level level in levelList)
@@ -30,21 +34,46 @@ public class LevelManager : MonoBehaviour {
             GameObject btnNovo = Instantiate(botao) as GameObject;
             BotaoLevel btnNew = btnNovo.GetComponent<BotaoLevel>();
 
-            btnNew.levelTxtBtn.text = level.levelText;
+            btnNew.levelTxtBtn.text = "\n" + level.levelText;
 
-            if (PlayerPrefs.GetInt("Level" + btnNew.levelTxtBtn.text) == 1)
+            if (PlayerPrefs.GetInt("Level" + level.levelText) == 1)
             {
                 level.desbloqueado = 1;
                 level.habilitado = true;
                 level.txtAtivo = true;
 
+                
+
+                if(PlayerPrefs.HasKey("Level"+ level.levelText + "star")){
+
+                    int star = PlayerPrefs.GetInt("Level" + level.levelText + "star");
+
+                  
+
+                    if (star == 1)
+                    {
+                        btnNew.GetComponent<Image>().overrideSprite = starOne;
+                       
+                    }
+                    else if(star == 2)
+                    {
+                        btnNew.GetComponent<Image>().overrideSprite = starTwo;
+                    }
+                    else if(star >= 3)
+                    {
+                        btnNew.GetComponent<Image>().overrideSprite = starThree;
+                    }
+
+                }
+
             }
+          
 
 
             btnNew.desbloqueadoBtn = level.desbloqueado;
             btnNew.GetComponent<Button>().interactable = level.habilitado;
             btnNew.GetComponentInChildren<Text>().enabled = level.txtAtivo;
-            btnNew.GetComponent<Button>().onClick.AddListener(() => ClickLevel("Level" + btnNew.levelTxtBtn.text));
+            btnNew.GetComponent<Button>().onClick.AddListener(() => ClickLevel("Level" + level.levelText));
 
             btnNovo.transform.SetParent(localBtn, false);
         }
@@ -59,6 +88,9 @@ public class LevelManager : MonoBehaviour {
     void Start()
     {
 
+        //provisorio
+        //PlayerPrefs.SetInt("Level1star", 3);
+
         //deletar player prefs
         //PlayerPrefs.DeleteAll();
         ListaAdd();
@@ -67,11 +99,6 @@ public class LevelManager : MonoBehaviour {
         score.text = ScoreManager.instance.GetScore().ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void Awake()
     {
