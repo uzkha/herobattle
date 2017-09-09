@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\BacterinoFlip.cs" />
     <Compile Include="Assets\Scripts\BotaoLevel.cs" />
     <Compile Include="Assets\Scripts\CameraHeroi.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
