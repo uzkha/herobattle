@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
 
-    public UIManager instance;
+    public static UIManager instance;
 
     [SerializeField]
     private Text pontosUI, user, txtTempo;
@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour {
         user.text = UsuarioManager.instance.getUsuarioNome();
     }
 
-    void AtualizarCoins(int coin)
+    public void AtualizarCoins(int coin)
     {
         pontosUI.text = coin.ToString();
     }
