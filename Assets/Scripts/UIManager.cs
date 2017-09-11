@@ -15,6 +15,11 @@ public class UIManager : MonoBehaviour {
     public float auxTempo = 5f;
     private int auxTempoSound = 5;
 
+	[SerializeField]
+	private GameObject panelWin;
+
+
+
 
     private void Awake()
     {
@@ -39,6 +44,11 @@ public class UIManager : MonoBehaviour {
     {
         pontosUI = GameObject.Find("Coin").GetComponent<Text>();
         user = GameObject.Find("User").GetComponent<Text>();
+
+		panelWin = GameObject.Find("PanelWin");
+		//canvas = GameObject.Find("CanvasWin");
+
+		LigaDesligaPanel ();
     }
 
 
@@ -102,10 +112,29 @@ public class UIManager : MonoBehaviour {
 		
 	}
 
+	public void chamarPanelWin(){
+		//canvas.SetActive (true);
+		panelWin.SetActive (true);
+
+	}
+
 
     private IEnumerator DestroiTemporizador()
     {
         yield return new WaitForSeconds(1f);
         Destroy(txtTempo.gameObject);
     }
+
+	void LigaDesligaPanel()
+	{
+		StartCoroutine(tempo());
+	}
+
+	IEnumerator tempo()
+	{
+		yield return new WaitForSeconds(0.001f);
+		panelWin.SetActive(false);
+		//canvas.SetActive (false);
+
+	}
 }

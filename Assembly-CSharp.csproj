@@ -47,8 +47,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\BacterinoFlip.cs" />
+     <Compile Include="Assets\Scripts\BacterinoSlideJoint.cs" />
      <Compile Include="Assets\Scripts\BotaoLevel.cs" />
      <Compile Include="Assets\Scripts\CameraHeroi.cs" />
+     <Compile Include="Assets\Scripts\DestroPillFX.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GetCena.cs" />
      <Compile Include="Assets\Scripts\HeroiMove.cs" />
@@ -63,6 +66,7 @@
      <Compile Include="Assets\Scripts\UsuarioManager.cs" />
      <Compile Include="Assets\Scripts\UsuarioRegistro.cs" />
      <None Include="Assets\Images\ColorfulButtons\Credits.txt" />
+     <None Include="Assets\Sound\8 Bit Composers Super Pack LE (Free)\8 Bit Composers Super Pack LE.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

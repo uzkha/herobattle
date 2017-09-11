@@ -225,6 +225,17 @@ public class HeroiMove : MonoBehaviour {
 
             Destroy(outro.gameObject);
         }
+
+		if (outro.gameObject.CompareTag ("paredeD")) {
+		
+			//para o jogo
+			GameManager.instance.gameStart = false;
+
+			UIManager.instance.chamarPanelWin ();
+
+
+		}
+
     }
 
 
