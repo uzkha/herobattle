@@ -100,7 +100,7 @@ public class LevelManager : MonoBehaviour {
     {
 
         //destroy gamemanager e ui manager
-        /*Destroy(GameObject.Find("GameManager(Clone)"));
-        Destroy(GameObject.Find("UIManager(Clone)"));*/
+        Destroy(GameObject.Find("GameManager(Clone)"));
+        Destroy(GameObject.Find("UIManager(Clone)"));
     }
 }

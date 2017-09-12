@@ -12,8 +12,8 @@ public class UIManager : MonoBehaviour {
     private Text pontosUI, user, txtTempo, txtCoinLevel;
 
     public bool iniciarTempo;
-    public float auxTempo = 5f;
-    private int auxTempoSound = 5;
+	public float auxTempo;
+	private int auxTempoSound;
 
 	[SerializeField]
 	private GameObject panelWin;
@@ -37,8 +37,8 @@ public class UIManager : MonoBehaviour {
 
         SceneManager.sceneLoaded += Carrega;
 
-        BuscarDados();
-        SetarDados();
+        /*BuscarDados();
+        SetarDados();*/
 
     }
 
@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour {
         pontosUI = GameObject.Find("Coin").GetComponent<Text>();
         user = GameObject.Find("User").GetComponent<Text>();
         txtCoinLevel = GameObject.Find("TXT-Coins-level").GetComponent<Text>();
+		txtTempo = GameObject.Find("TXT-Tempo").GetComponent<Text>();
 
         imgStar1 = GameObject.Find("Img-Star1Fill").GetComponent<Image>();
         imgStar2 = GameObject.Find("Img-Star2Fill").GetComponent<Image>();
@@ -57,6 +58,9 @@ public class UIManager : MonoBehaviour {
 		//canvas = GameObject.Find("CanvasWin");
 
 		LigaDesligaPanel ();
+
+		auxTempo = 5f;
+		auxTempoSound = 5;
     }
 
 
@@ -85,8 +89,10 @@ public class UIManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        txtTempo = GameObject.Find("TXT-Tempo").GetComponent<Text>();
-        iniciarTempo = true;
+       
+        //iniciarTempo = true;
+		BuscarDados();
+		SetarDados();
     }
 	
 	// Update is called once per frame
@@ -101,7 +107,7 @@ public class UIManager : MonoBehaviour {
             if(auxTempo < 1)
             {
                 iniciarTempo = false;
-                GameManager.instance.gameStart = true; // para classe GameManager inciar a fase
+				GameManager.instance.gameStarted = true; // para classe GameManager inciar a fase
                 txtTempo.text = "Começar";
 
                 StartCoroutine(DestroiTemporizador());

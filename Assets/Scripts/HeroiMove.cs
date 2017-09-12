@@ -43,7 +43,7 @@ public class HeroiMove : MonoBehaviour {
 
         rImg.uvRect = temp;*/
 
-		if (GameManager.instance.gameStart) {
+		if (GameManager.instance.gameStarted) {
      
 			if (Input.GetKey (KeyCode.RightArrow) && !face) {
 				Flip ();
@@ -232,7 +232,7 @@ public class HeroiMove : MonoBehaviour {
             GameManager.instance.pontosAux = pontos;
 
             //para o jogo
-            GameManager.instance.gameStart = false;
+            GameManager.instance.gameStarted = false;
 
 			UIManager.instance.chamarPanelWin ();
 

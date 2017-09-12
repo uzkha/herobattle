@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
-    public bool gameStart;
+    public bool gameStarted;
     public bool gameEnd;
     public int pontos;
     public int pontosLevel;
@@ -23,15 +23,24 @@ public class GameManager : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+
+		gameStart ();
     }
 
+	void gameStart(){
+		
+		ScoreManager.instance.GameStartScoreM();
+
+		//level 1 sai liberado
+		PlayerPrefs.SetInt("Level1", 1);
+
+		UIManager.instance.iniciarTempo = true;
+
+	}
 
     // Use this for initialization
     void Start() {
-        ScoreManager.instance.GameStartScoreM();
-
-        //level 1 sai liberado
-        PlayerPrefs.SetInt("Level1", 1);
+		gameStart ();
     }
 
     // Update is called once per frame

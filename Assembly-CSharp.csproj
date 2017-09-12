@@ -61,12 +61,12 @@
      <Compile Include="Assets\Scripts\MenuHorseGames.cs" />
      <Compile Include="Assets\Scripts\MenuInicialBatalhaHerois.cs" />
      <Compile Include="Assets\Scripts\MenuJogar.cs" />
+     <Compile Include="Assets\Scripts\PanelWinButtons.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
      <Compile Include="Assets\Scripts\UsuarioManager.cs" />
      <Compile Include="Assets\Scripts\UsuarioRegistro.cs" />
      <None Include="Assets\Images\ColorfulButtons\Credits.txt" />
-     <None Include="Assets\Sound\8 Bit Composers Super Pack LE (Free)\8 Bit Composers Super Pack LE.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
