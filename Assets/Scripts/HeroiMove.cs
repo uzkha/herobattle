@@ -227,14 +227,19 @@ public class HeroiMove : MonoBehaviour {
         }
 
 		if (outro.gameObject.CompareTag ("paredeD")) {
-		
-			//para o jogo
-			GameManager.instance.gameStart = false;
+
+            GameManager.instance.pontos = pontos;
+            GameManager.instance.pontosAux = pontos;
+
+            //para o jogo
+            GameManager.instance.gameStart = false;
 
 			UIManager.instance.chamarPanelWin ();
 
+            GameManager.instance.gameEnd = true;
 
-		}
+
+        }
 
     }
 

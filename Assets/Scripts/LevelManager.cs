@@ -34,6 +34,7 @@ public class LevelManager : MonoBehaviour {
             GameObject btnNovo = Instantiate(botao) as GameObject;
             BotaoLevel btnNew = btnNovo.GetComponent<BotaoLevel>();
 
+          
             btnNew.levelTxtBtn.text = "\n" + level.levelText;
 
             if (PlayerPrefs.GetInt("Level" + level.levelText) == 1)
@@ -42,18 +43,14 @@ public class LevelManager : MonoBehaviour {
                 level.habilitado = true;
                 level.txtAtivo = true;
 
-                
-
-                if(PlayerPrefs.HasKey("Level"+ level.levelText + "star")){
+               
+                if (PlayerPrefs.HasKey("Level"+ level.levelText + "star")){
 
                     int star = PlayerPrefs.GetInt("Level" + level.levelText + "star");
 
-                  
-
                     if (star == 1)
                     {
-                        btnNew.GetComponent<Image>().overrideSprite = starOne;
-                       
+                        btnNew.GetComponent<Image>().overrideSprite = starOne;                      
                     }
                     else if(star == 2)
                     {
@@ -68,7 +65,6 @@ public class LevelManager : MonoBehaviour {
 
             }
           
-
 
             btnNew.desbloqueadoBtn = level.desbloqueado;
             btnNew.GetComponent<Button>().interactable = level.habilitado;
@@ -102,6 +98,7 @@ public class LevelManager : MonoBehaviour {
 
     void Awake()
     {
+
         //destroy gamemanager e ui manager
         /*Destroy(GameObject.Find("GameManager(Clone)"));
         Destroy(GameObject.Find("UIManager(Clone)"));*/

@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour {
     public static UIManager instance;
 
     [SerializeField]
-    private Text pontosUI, user, txtTempo;
+    private Text pontosUI, user, txtTempo, txtCoinLevel;
 
     public bool iniciarTempo;
     public float auxTempo = 5f;
@@ -17,6 +17,8 @@ public class UIManager : MonoBehaviour {
 
 	[SerializeField]
 	private GameObject panelWin;
+
+    private Image imgStar1, imgStar2, imgStar3;
 
 
 
@@ -44,8 +46,14 @@ public class UIManager : MonoBehaviour {
     {
         pontosUI = GameObject.Find("Coin").GetComponent<Text>();
         user = GameObject.Find("User").GetComponent<Text>();
+        txtCoinLevel = GameObject.Find("TXT-Coins-level").GetComponent<Text>();
 
-		panelWin = GameObject.Find("PanelWin");
+        imgStar1 = GameObject.Find("Img-Star1Fill").GetComponent<Image>();
+        imgStar2 = GameObject.Find("Img-Star2Fill").GetComponent<Image>();
+        imgStar3 = GameObject.Find("Img-Star3Fill").GetComponent<Image>();
+
+
+        panelWin = GameObject.Find("PanelWin");
 		//canvas = GameObject.Find("CanvasWin");
 
 		LigaDesligaPanel ();
@@ -70,6 +78,10 @@ public class UIManager : MonoBehaviour {
         pontosUI.text = coin.ToString();
     }
 
+    public void AtualizarCoinsLevel(int coin)
+    {
+        txtCoinLevel.text = coin.ToString();
+    }
 
     // Use this for initialization
     void Start () {
@@ -118,6 +130,20 @@ public class UIManager : MonoBehaviour {
 
 	}
 
+    public void setarStar(int star)
+    {
+        if(star == 1)
+        {
+            imgStar1.fillAmount = 1;
+        }else if(star == 2)
+        {
+            imgStar2.fillAmount = 1;
+        }else if (star == 3)
+        {
+            imgStar3.fillAmount = 1;
+        }
+
+    }
 
     private IEnumerator DestroiTemporizador()
     {
