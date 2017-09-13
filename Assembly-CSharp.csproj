@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\MenuJogar.cs" />
      <Compile Include="Assets\Scripts\PanelWinButtons.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
+     <Compile Include="Assets\Scripts\Share.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
      <Compile Include="Assets\Scripts\UsuarioManager.cs" />
      <Compile Include="Assets\Scripts\UsuarioRegistro.cs" />
