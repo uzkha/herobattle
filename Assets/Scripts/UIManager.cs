@@ -16,11 +16,13 @@ public class UIManager : MonoBehaviour {
 	private int auxTempoSound;
 
 	[SerializeField]
-	private GameObject panelWin;
+	private GameObject panelWin, panelPause;
 
     private Image imgStar1, imgStar2, imgStar3;
 
+    private bool pause;
 
+    private Button pauseBtn, pauseBtnPanel;
 
 
     private void Awake()
@@ -54,10 +56,16 @@ public class UIManager : MonoBehaviour {
         imgStar3 = GameObject.Find("Img-Star3Fill").GetComponent<Image>();
 
 
-        panelWin = GameObject.Find("PanelWin");
-		//canvas = GameObject.Find("CanvasWin");
+        panelWin   = GameObject.Find("PanelWin");
+        panelPause = GameObject.Find("PanelPause");
 
-		LigaDesligaPanel ();
+        pauseBtnPanel = GameObject.Find("BtnPausePanel").GetComponent<Button>();
+        pauseBtn      = GameObject.Find("BtnPause").GetComponent<Button>();
+
+        pauseBtn.onClick.AddListener(Pause);
+        pauseBtnPanel.onClick.AddListener(Pause);
+
+        LigaDesligaPanel ();
 
 		auxTempo = 5f;
 		auxTempoSound = 5;
@@ -136,6 +144,28 @@ public class UIManager : MonoBehaviour {
 
 	}
 
+
+    public void Pause()
+    {
+        if (pause == false) {
+
+            panelPause.SetActive(true);
+            Time.timeScale = 0;
+            pause = true;
+
+        }
+        else
+        {
+            panelPause.SetActive(false);
+            Time.timeScale = 1;
+            pause = false;
+        }
+
+    }
+
+
+
+
     public void setarStar(int star)
     {
         if(star == 1)
@@ -166,7 +196,7 @@ public class UIManager : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(0.001f);
 		panelWin.SetActive(false);
-		//canvas.SetActive (false);
+		panelPause.SetActive (false);
 
 	}
 }

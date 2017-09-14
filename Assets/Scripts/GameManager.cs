@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -51,6 +52,11 @@ public class GameManager : MonoBehaviour {
             contarPontosLevel();
         }
 
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(7);
+        }
 
     }
 
@@ -107,6 +113,8 @@ public class GameManager : MonoBehaviour {
             atualizarMoedasPlayer();
             atualizarLevel();
 
+            //libera botoes
+            PanelWinButtons.ativarBotao = true;
         }
 
     }
