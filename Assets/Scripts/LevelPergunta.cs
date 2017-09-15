@@ -26,11 +26,11 @@ public class LevelPergunta : MonoBehaviour {
    
         switch (fase) {
 
-            case 5: // level 1
+		case 5: // level 1
 
-                txPergunta.text = "Parabéns você está começando a aventura no Batalho dos Heróis. \n" +
-                                  "Sua primeira missão é levar o Luizito em uma viagem em busca de medicamentos. Mas tenha atenção e tome cuidado com o Bacterino. \n" +
-                                  "Ele vai querer estragar sua jornada, então desvie-se dele e capture o máximo de medicamento que conseguir! Vamos lá, boa sorte!";
+			txPergunta.text = "Parabéns você está começando a aventura no Batalha dos Heróis. \n" +
+			"Nesta fase seu objetivo é capturar os medicamentos e desviar as bactérias. \n" +
+			"Toque na tela para pular...Boa sorte!";
 
                 break;
 

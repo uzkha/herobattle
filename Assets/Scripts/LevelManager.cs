@@ -93,6 +93,7 @@ public class LevelManager : MonoBehaviour {
 
         usuario.text = UsuarioManager.instance.getUsuarioNome();
         score.text = ScoreManager.instance.GetScore().ToString();
+
     }
 
     private void Update()
