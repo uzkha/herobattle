@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\BacterinoSlideJoint.cs" />
     <Compile Include="Assets\Scripts\BotaoLevel.cs" />
     <Compile Include="Assets\Scripts\CameraHeroi.cs" />
+    <Compile Include="Assets\Scripts\ConnectUrl.cs" />
     <Compile Include="Assets\Scripts\DestroPillFX.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GetCena.cs" />

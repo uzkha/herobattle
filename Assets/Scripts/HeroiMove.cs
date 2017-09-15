@@ -56,17 +56,17 @@ public class HeroiMove : MonoBehaviour {
 			transform.Translate (new Vector2 (vel2 * Time.deltaTime, 0));
 
 			if(pulando == false){ // no chao
-				anim.SetBool ("Idle", false);
-				anim.SetBool ("Andar", true);
-				anim.SetBool ("Pulo", false);	
+				anim.SetBool ("idle", false);
+				anim.SetBool ("run", true);
+				anim.SetBool ("jump", false);	
 			}
 		
 			if (Input.GetMouseButtonDown (0) /*&& liberaPulo*/) {
 
 				heroiRB.AddForce (new Vector2 (0, force), ForceMode2D.Impulse);
-				anim.SetBool ("Idle", false);
-				anim.SetBool ("Andar", false);
-				anim.SetBool ("Pulo", true);
+				anim.SetBool ("idle", false);
+				anim.SetBool ("run", false);
+				anim.SetBool ("jump", true);
 
                 AudioManager.instance.SonsFXToca(4);
 
@@ -77,9 +77,10 @@ public class HeroiMove : MonoBehaviour {
 			
 		} else {
 
-			anim.SetBool ("Idle", true);
-			anim.SetBool ("Andar", false);
-		}
+			anim.SetBool ("idle", true);
+			anim.SetBool ("run", false);
+            anim.SetBool("jump", false);
+        }
 
 
 			//correr

@@ -38,16 +38,16 @@ public class GetCena : MonoBehaviour {
 
 		fase = SceneManager.GetActiveScene().buildIndex;
 
-    if (fase != 0 && fase != 1 && fase != 2 && fase != 3 && fase != 4 && fase != 5 && fase != 7)
-    {
-        Instantiate(UIManagerGo);
-        Instantiate(GameManagerGo);
+        if (fase != 0 && fase != 1 && fase != 2 && fase != 3 && fase != 4 && fase != 5 && fase != 7)
+        {
+            Instantiate(UIManagerGo);
+            Instantiate(GameManagerGo);
 
-        //Camera.main.projectionMatrix = Matrix4x4.Ortho(-orthoSize*aspect, orthoSize * aspect, -orthoSize, orthoSize, Camera.main.nearClipPlane, Camera.main.farClipPlane);
+            //Camera.main.projectionMatrix = Matrix4x4.Ortho(-orthoSize*aspect, orthoSize * aspect, -orthoSize, orthoSize, Camera.main.nearClipPlane, Camera.main.farClipPlane);
 
-    }
+        }
 
-        Camera.main.projectionMatrix = Matrix4x4.Ortho(-orthoSize * aspect, orthoSize * aspect, -orthoSize, orthoSize, Camera.main.nearClipPlane, Camera.main.farClipPlane);
+            Camera.main.projectionMatrix = Matrix4x4.Ortho(-orthoSize * aspect, orthoSize * aspect, -orthoSize, orthoSize, Camera.main.nearClipPlane, Camera.main.farClipPlane);
     }
 
     public int getCenaIndex()

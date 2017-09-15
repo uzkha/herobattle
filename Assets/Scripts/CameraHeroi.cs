@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraHeroi : MonoBehaviour {
 
 	[SerializeField]
-	private Transform objE, objD, heroi;
+	public Transform objE, objD, heroi;
 	private float t = 1;
 
 	// Update is called once per frame
