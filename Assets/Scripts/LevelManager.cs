@@ -27,6 +27,8 @@ public class LevelManager : MonoBehaviour {
     public Sprite starTwo;
     public Sprite starThree;
 
+    public GameObject PanelQuestion;
+
     void ListaAdd()
     {
         foreach (Level level in levelList)
@@ -94,6 +96,19 @@ public class LevelManager : MonoBehaviour {
         usuario.text = UsuarioManager.instance.getUsuarioNome();
         score.text = ScoreManager.instance.GetScore().ToString();
 
+        PanelQuestionStart();
+
+    }
+
+    void PanelQuestionStart()
+    {
+
+        if(PlayerPrefs.HasKey("Respondeu"))
+        {
+            Destroy(PanelQuestion.gameObject);
+        }
+
+
     }
 
     private void Update()
@@ -115,6 +130,8 @@ public class LevelManager : MonoBehaviour {
 
     void Awake()
     {
+
+        PanelQuestionStart();
 
         //destroy gamemanager e ui manager
         Destroy(GameObject.Find("GameManager(Clone)"));
