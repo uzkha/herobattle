@@ -88,7 +88,7 @@ public class Avaliacao : MonoBehaviour {
         s2 = PlayerPrefs.GetString("r2");
         s3 = PlayerPrefs.GetString("r3");
 
-        url = "http://caminhodaluzpf.org.br/batalhadosherois/api/app?r1="+ s1 +"&r2=" + s2 + "&r3=" + s3;
+        url = "http://localhost/batalhadosherois/api/app?r1="+ s1 +"&r2=" + s2 + "&r3=" + s3;
 
         StartCoroutine(Http());
     }
